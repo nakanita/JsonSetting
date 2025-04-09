@@ -28,7 +28,7 @@ class JsonSetting:
         self.idxpat = re.compile(r'(.+)\[\s*([0-9]*)\s*\]$')  # 配列の添え字パターン
         # Note: ２重以上の配列には対応していない
 
-    def parse_path(self, pathkey: str) -> tuple[list, str]:
+    def parse_path(self, pathkey: str) -> typing.Tuple[list, str]:
         """parse_path
 
         パスを区切り文字で分割する
@@ -222,6 +222,8 @@ class JsonSetting:
                     "The index out of range, key=\"{}\"".format(item))
             retval = sublist[idx]
         # キーが無ければNoneを返す
+        elif dic is None:
+            return None
         elif item not in dic:
             return None
         else:  # キーがあって配列で無ければ、辞書の値を返す

@@ -43,6 +43,7 @@ me.save("setting.json")
 ## History
 
 - 2024/11/15    とりあえず動く版。
+- 2025/04/10    python3.8 でも動作可能とした。
 
 ## Note
 
